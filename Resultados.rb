@@ -20,12 +20,12 @@ class Resultados
             @visitante_pulos_j3			= lines[0]['partida'][2][0]['visitante_pulos'].to_i
 
             #soma pontuacao da partida
-            @mandante_soma_pulos_pertida		= @mandante_pulos_j1 + @mandante_pulos_j2 + @mandante_pulos_j3
-            @visitante_soma_pulos_pertida		= @visitante_pulos_j1 + @visitante_pulos_j2 + @visitante_pulos_j3
+            @mandante_soma_pulos_pertida	= @mandante_pulos_j1 + @mandante_pulos_j2 + @mandante_pulos_j3
+            @visitante_soma_pulos_pertida	= @visitante_pulos_j1 + @visitante_pulos_j2 + @visitante_pulos_j3
 
             #bonificacao por pontuacao superior a 10 na partida
-            @mandante_bonus_1			= @mandante_soma_pulos_pertida > 10 ?  2 : 0
-            @visitante_bonus_1			= @visitante_soma_pulos_pertida > 10 ? 2 : 0
+            @mandante_bonus_1	= @mandante_soma_pulos_pertida > 10 ?  2 : 0
+            @visitante_bonus_1	= @visitante_soma_pulos_pertida > 10 ? 2 : 0
 
 			#bonificacao por pulos iguais nas tres jogadas
 			@visitante_bonus_2	= 0
@@ -54,8 +54,7 @@ class Resultados
 			if @visitante_soma_pulos_pertida < 3
 				@jogadores_punidos<<@visitante
 			end
-				
-			
+
 			@resultado = [
 				"mandante" 					=> @mandante, 
 				"visitante" 				=> @visitante,

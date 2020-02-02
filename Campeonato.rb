@@ -1,4 +1,4 @@
-#recebe o array de resultados para calcular a pontuacao por partida, gera a classificacao final e salva no arquivo .csv
+#recebe o array de resultados para calcular a pontuacao por partida, gera a classificacao final e salva no arquivo .csv criado no diretorio raiz
 class Campeonato
 
 	def initialize(value)
@@ -40,9 +40,9 @@ class Campeonato
 		@classificacao_array = @classificacao_array.sort_by { |hsh| hsh[0]["pontuacao_total"] }.reverse
 		
 		CSV.open("classificacao.csv", "wb") do |csv|
-			csv << ["PARTICIPANTE", "PONTUAÇÃO TOTAL"]
-			@classificacao_array.each do |participante|
-				csv << [participante[0]['jogador'], participante[0]['pontuacao_total']]
+			csv << ["CLASIFICAÇÃO", "PARTICIPANTE", "PONTUAÇÃO TOTAL"]
+			@classificacao_array.each_with_index do |participante, index|
+				csv << [index+1, participante[0]['jogador'], participante[0]['pontuacao_total']]
 			end
 		end
 
