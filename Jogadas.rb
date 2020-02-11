@@ -13,7 +13,7 @@ class Jogadas
         @jogadas.each_with_index do |lines, index|
             @lines =  lines.gsub("\n", ' ').squeeze(' ').split(' ')
             @jogada = [
-				"mandante" 			=> @lines[0], 
+				"mandante" 		=> @lines[0], 
 				"visitante" 		=> @lines[2], 
 				"mandante_pulos" 	=> @lines[3], 
 				"visitante_pulos" 	=> @lines[5]
